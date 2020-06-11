@@ -25,6 +25,7 @@
     "@nestjs/core": "^7.0.0",
     "@nestjs/platform-express": "^7.0.0",
     "@scalio-oss/nest-couchbase": "^1.0.0",
+    "@types/couchbase": "^2.4.2",
     "couchbase": "^3.0.2",
     "reflect-metadata": "^0.1.13",
     "rimraf": "^3.0.2",
