@@ -1,11 +1,11 @@
-import { Cluster } from "couchbase";
+import * as couchbase from "couchbase";
 
 export const ConfigProvider= [
     {
         provide:'CONFIG_DATABASE',
-        useFactory: (cluster: Cluster) =>{
-            cluster.authenticate('admin', 'admin123');
-            const bucket = cluster.openBucket('default');
+        useFactory: () =>{
+            const cluster = new couchbase.Cluster();
+            return cluster.authenticate('admin', 'admin123');
         },
         inject: ['DATABASE_CONNECTION'],
     },
