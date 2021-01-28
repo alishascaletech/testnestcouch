@@ -4,6 +4,10 @@ import { Cat } from './cat.entity';
 
 @Controller('cat')
 export class CatController {
-    constructor(private catService: CatService){};
-    
+  constructor(private catService: CatService) {}
+
+  @Get(':id')
+  findOne(@Param('id') id: string): Promise<Cat> {
+    return this.catService.findOne(id);
+  }
 }
